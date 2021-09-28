@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/png" href="logo.png">
+
+		<script type="text/javascript">
+			function inserer(num){
+				document.form.champsTexte.value = document.form.champsTexte.value + num;
+			}
+
+			function equal(){
+				var champ = document.form.champsTexte.value;
+				if ( champ) {
+					document.form.champsTexte.value = eval(champ);
+				}
+			}
+
+			function vider(){
+				document.form.champsTexte.value = "";   
+			}
+
+			function retour(){
+				var exp = document.form.champsTexte.value;
+				document.form.champsTexte.value = exp.substring(0,exp.length-1);
+			}
+		</script>
+		
+		<title>
+			JONAS CALCULATOR
+		</title>
+
+    </head>
+
+	<body id="calculatrice">
+
+		<div class="principale">
+
+			<p> JOJO <br> CALCULATOR</p>
+		    
+			<form name = "form">
+				<input class = "champsTexte" name="champsTexte"><br>
+			</form>	
+			
+			<table>
+				
+				<tr>
+					<td><input class="bouton ac" type="button" value="AC" onclick="vider()"></td>
+					<td><input class="bouton del" type="button" value="DEL" onclick="retour()"></td>
+					<td><input class="bouton" type="button" value="/" onclick="inserer('/')"></td>
+					<td><input class="bouton" type="button" value="*" onclick="inserer('*')"></td>
+				</tr>
+                
+               <tr>
+					<td><input class="bouton" type="button" value="7" onclick="inserer(7)"></td>
+					<td><input class="bouton" type="button" value="8" onclick="inserer(8)"></td>
+					<td><input class="bouton" type="button" value="9" onclick="inserer(9)"></td>
+					<td><input class="bouton" type="button" value="-" onclick="inserer('-')"></td>
+				</tr>
+
+				<tr>
+					<td><input class="bouton" type="button" value="4" onclick="inserer(4)"></td>
+					<td><input class="bouton" type="button" value="5" onclick="inserer(5)"></td>
+					<td><input class="bouton" type="button" value="6" onclick="inserer(6)"></td>
+					<td><input class="bouton" type="button" value="+" onclick="inserer('+')"></td>
+				</tr>
+
+				<tr>
+					<td><input class="bouton" type="button" value="1" onclick="inserer(1)"></td>
+					<td><input class="bouton" type="button" value="2" onclick="inserer(2)"></td>
+					<td><input class="bouton" type="button" value="3" onclick="inserer(3)"></td>
+					<td rowspan="5" class=""><input style="height:100px" class="bouton egale" type="button" value="=" onclick="equal()"></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><input style="width:106px" class="bouton" type="button" value="0" onclick="inserer(0)"></td>
+					<td><input class="bouton" type="button" value="." onclick="inserer('.')"></td>
+				</tr>
+
+			</table>			
+		</div>
+		<a href="index.html">BACK TO HOME</a>
+	</body>
+</html>
